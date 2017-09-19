@@ -2,7 +2,10 @@
   "rulesDirectory": [
     "node_modules/codelyzer"
   ],
-  "extends": "tslint:latest",
+  "extends": [
+    "tslint:latest",
+    "tslint-immutable"
+  ],
   "rules": {
     "jsdoc-format": false,
     "arrow-parens": [true, "ban-single-arg-parens"],
@@ -13,13 +16,41 @@
       "single"
     ],
     "object-literal-sort-keys": false,
-    "no-unused-variable": [true, "check-parameters", {"ignore-pattern": "^_"}],
     "no-console": [
       true,
       "info",
       "time",
       "timeEnd",
       "trace"
-    ]
+    ],
+    "typedef": [true, "call-signature"],
+
+    // tslint-immutable
+    "readonly-keyword": true,
+    "readonly-array": true,
+    // "no-let": true,
+    // "no-object-mutation": true,
+    "no-this": true,
+    "no-mixed-interface": true,
+    "no-expression-statement": [
+      true,
+      {
+        "ignore-prefix": [
+          "console",
+          "enableProdMode",
+          "platformBrowserDynamic",
+          "__karma__",
+          "getTestBed",
+          "TestBed",
+          "context",
+          "describe",
+          "beforeEach",
+          "it",
+          "expect",
+          "mutable"
+        ]
+      }
+    ],
+    "no-submodule-imports": [true, "rxjs", "zone.js", "@angular", "core-js"]
   }
 }

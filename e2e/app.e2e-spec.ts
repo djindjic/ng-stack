@@ -1,14 +1,14 @@
 import { AppPage } from './app.po';
 
 describe('ng-stack App', () => {
-  let page: AppPage;
+  let mutablePage: AppPage;
 
   beforeEach(() => {
-    page = new AppPage();
+    mutablePage = new AppPage();
   });
 
   it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+    mutablePage.navigateTo();
+    expect(mutablePage.getParagraphText()).toEqual('Welcome to app!');
   });
 });
